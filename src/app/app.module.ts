@@ -11,6 +11,8 @@ import { SettingsPageComponent } from './pages/settings-page/settings-page.compo
 import { ProductPageComponent } from './pages/product-page/product-page.component';
 import { ScannerPageComponent } from './pages/scanner-page/scanner-page.component';
 import { AppMaterialModule } from './app-material.module';
+import { BarcodeScannerDirective } from './directives/barcode-scanner.directive';
+import { BarcodeGeneratorDirective } from './directives/barcode-generator.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { AppMaterialModule } from './app-material.module';
     LoginPageComponent,
     SettingsPageComponent,
     ProductPageComponent,
-    ScannerPageComponent
+    ScannerPageComponent,
+    BarcodeScannerDirective,
+    BarcodeGeneratorDirective
   ],
   imports: [
     BrowserModule,

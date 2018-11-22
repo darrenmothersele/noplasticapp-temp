@@ -1,3 +1,3 @@
-<p>
-  product-page works!
-</p>
+<div *ngIf="barcode$ | async as barcode">
+  <h3>{{ barcode }}</h3>
+</div>

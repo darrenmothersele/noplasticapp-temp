@@ -533,6 +533,15 @@
   resolved "https://registry.yarnpkg.com/@xtuc/long/-/long-4.2.1.tgz#5c85d662f76fa1d34575766c5dcd6615abcd30d8"
   integrity sha512-FZdkNBDqBRHKQ2MEbSC17xnPFOhZxeJ2YGSfr2BKf3sujG49Qe3bB+rGCwQfIaA7WHnGeGkSijX4FuBCdrzW/g==
 
+"@zxing/library@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@zxing/library/-/library-0.8.4.tgz#f43e0e11208ddef7b5250aa0294b3036023e166c"
+  integrity sha512-VcrhVfUZWaWIsMunuYfVWGp4Co/vEtcsNGxTwUrLEiTU+C+Y7WFutZI5msJy3ng3fz7AJcJnr7NM+BNudzqAIg==
+  dependencies:
+    ts-custom-error "^2.2.1"
+  optionalDependencies:
+    text-encoding "^0.7.0"
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
@@ -6687,6 +6696,11 @@ terser@^3.8.1:
     source-map "~0.6.1"
     source-map-support "~0.5.6"
 
+text-encoding@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/text-encoding/-/text-encoding-0.7.0.tgz#f895e836e45990624086601798ea98e8f36ee643"
+  integrity sha512-oJQ3f1hrOnbRLOcwKz0Liq2IcrvDeZRHXhd9RgLrsT+DjWY/nty1Hi7v3dtkaEYbPYe0mUoOfzRrMwfXXwgPUA==
+
 through2@^2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
@@ -6807,6 +6821,11 @@ trim-right@^1.0.1:
   integrity sha512-m6s2OdQe5wgpFMC+pAJ+q9djG82O2jcHPOI6RNg1yy9rCYR+WD6Nbpl32fDpfC56nirdRy+opFa/Vk7HYhqaew==
   dependencies:
     glob "^7.1.2"
+
+ts-custom-error@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/ts-custom-error/-/ts-custom-error-2.2.1.tgz#47086fbc34df5c7c2d4fba8c92d8767662066951"
+  integrity sha512-lHKZtU+PXkVuap6nlFZybIAFLUO8B3jbCs1VynBL8AUSAHfeG6HpztcBTDRp5I+fN5820N9kGg+eTIvr+le2yg==
 
 ts-node@~7.0.0:
   version "7.0.1"
