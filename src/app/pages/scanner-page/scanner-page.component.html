@@ -1,1 +1,16 @@
-<video appBarcodeScanner (detected)="onDetected($event)"></video>
+<p>
+  Scan the barcode using your phone camera.
+  To get a good scan, ensure the barcode is as large as possible in the picture,
+  while also being in focus.
+</p>
+
+<video *ngIf="!!deviceId" [appBarcodeScanner]="deviceId" (detected)="onDetected($event)"></video>
+
+<!--<pre>{{ deviceId }}</pre>-->
+<mat-form-field *ngIf="deviceList.length > 0">
+  <mat-select placeholder="Select camera" (valueChange)="onCameraChange($event)">
+    <mat-option *ngFor="let camera of deviceList" [value]="camera.deviceId">
+      {{ camera.label }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

@@ -4,15 +4,25 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { ScannerPageComponent } from './pages/scanner-page/scanner-page.component';
 import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { AuthGuard } from './services/auth.guard';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
+import { CallbackComponent } from './components/callback/callback.component';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivateChild: [AuthGuard],
     children: [
       {
         path: '',
-        component: HomePageComponent
+        component: HomePageComponent,
+        pathMatch: 'full'
+      },
+      {
+        path: 'settings',
+        component: SettingsPageComponent
       },
       {
         path: 'scanner',
@@ -23,6 +33,14 @@ const routes: Routes = [
         component: ProductPageComponent
       }
     ]
+  },
+  {
+    path: 'login',
+    component: LoginPageComponent
+  },
+  {
+    path: 'callback',
+    component: CallbackComponent
   }
 ];
 

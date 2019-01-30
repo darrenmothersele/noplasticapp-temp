@@ -1,3 +1,10 @@
 <div *ngIf="barcode$ | async as barcode">
-  <h3>{{ barcode }}</h3>
+
+  <mat-card>
+    <h3>Product scanned</h3>
+    <p><b>Barcode:</b> {{ barcode }}</p>
+    <p><b>Product details:</b></p>
+  </mat-card>
+
+
 </div>

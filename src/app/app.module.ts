@@ -13,6 +13,11 @@ import { ScannerPageComponent } from './pages/scanner-page/scanner-page.componen
 import { AppMaterialModule } from './app-material.module';
 import { BarcodeScannerDirective } from './directives/barcode-scanner.directive';
 import { BarcodeGeneratorDirective } from './directives/barcode-generator.directive';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { CallbackComponent } from './components/callback/callback.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,13 +29,17 @@ import { BarcodeGeneratorDirective } from './directives/barcode-generator.direct
     ProductPageComponent,
     ScannerPageComponent,
     BarcodeScannerDirective,
-    BarcodeGeneratorDirective
+    BarcodeGeneratorDirective,
+    CallbackComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
-    AppMaterialModule
+    AppMaterialModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]

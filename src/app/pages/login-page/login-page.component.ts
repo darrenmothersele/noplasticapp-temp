@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { auth } from 'firebase/app';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login-page',
@@ -7,9 +13,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  constructor() { }
+  isLoggedIn$: Observable<boolean>;
 
-  ngOnInit() {
+  constructor(
+    private readonly auth: AuthService
+  ) { }
+
+  login() {
+    this.auth.login('/');
   }
 
+  ngOnInit() {
+
+  }
+
+  // ngOnInit() {
+  //   this.isLoggedIn$ = this.afAuth.authState.pipe(
+  //     map(user => !!user),
+  //     tap(isLoggedIn => {
+  //       if (isLoggedIn) {
+  //         this.router.navigate(['/']);
+  //       }
+  //     })
+  //   );
+  // }
+  //
+  // login() {
+  //   this.afAuth.auth.signInWithRedirect(new auth.GoogleAuthProvider());
+  // }
+  //
+  // logout() {
+  //   this.afAuth.auth.signOut();
+  // }
 }

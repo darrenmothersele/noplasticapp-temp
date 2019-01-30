@@ -1,8 +1,20 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatIconModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule,
+  MatSelectModule
+} from '@angular/material';
 
 const MATERIAL_MODULES = [
-  MatButtonModule
+  MatButtonModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatSelectModule
 ];
 
 @NgModule({
