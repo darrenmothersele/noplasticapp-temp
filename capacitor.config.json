@@ -1,0 +1,6 @@
+{
+  "appId": "org.noplasticapp.app",
+  "appName": "NoPlasticApp",
+  "bundledWebRuntime": false,
+  "webDir": "dist/noplasticapp"
+}
