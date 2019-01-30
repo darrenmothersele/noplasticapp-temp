@@ -98,9 +98,11 @@ export class AuthService {
     this.isLoggedIn = false;
     // Sign out of Firebase
     this.loggedInFirebase = false;
-    this.afAuth.auth.signOut();
-    // Return to homepage
-    this.router.navigate(['/']);
+    this.afAuth.auth.signOut().then(() => {
+      this.auth0.logout({});
+      // Return to homepage
+      // this.router.navigate(['/']);
+    })
   }
 
 }
