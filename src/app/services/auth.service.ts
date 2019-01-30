@@ -102,7 +102,7 @@ export class AuthService {
       this.auth0.logout({});
       // Return to homepage
       // this.router.navigate(['/']);
-    })
+    });
   }
 
 }
