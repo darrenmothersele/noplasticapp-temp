@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CallbackComponent } from './components/callback/callback.component';
 import { HttpClientModule } from '@angular/common/http';
+import {AngularFireFunctionsModule, FunctionsRegionToken} from '@angular/fire/functions';
 
 @NgModule({
   declarations: [
@@ -39,9 +40,12 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     AppMaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireFunctionsModule
   ],
-  providers: [],
+  providers: [
+    { provide: FunctionsRegionToken, useValue: 'us-central1' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//  response.send("Hello from Firebase!");
-// });
+const functions = require("firebase-functions");
+const googleapis_1 = require("googleapis");
+const fetch_product_1 = require("./fetch-product");
+const spreadsheetId = functions.config().sheets.id;
+const auth = functions.config().sheets.key;
+const sheets = googleapis_1.google.sheets({ version: 'v4', auth });
+exports.checkProduct = functions.https.onCall(async (data) => {
+    const { barcode } = data;
+    try {
+        return await fetch_product_1.fetchProduct(sheets, spreadsheetId, barcode);
+    }
+    catch (err) {
+        throw new functions.https.HttpsError('out-of-range', err.message);
+    }
+});
 //# sourceMappingURL=index.js.map

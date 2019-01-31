@@ -3,8 +3,31 @@
   <mat-card>
     <h3>Product scanned</h3>
     <p><b>Barcode:</b> {{ barcode }}</p>
-    <p><b>Product details:</b></p>
+
+    <div *ngIf="data$ | async as data; else searching">
+      <div *ngIf="!!data['product']">
+        <p><b>Product details:</b></p>
+        <h3>{{ data['product'][1] }}</h3>
+        <p>{{ data['product'][3] }}</p>
+      </div>
+      <div *ngIf="!!data['manufacturer']">
+        <p><b>Manufacturer details:</b></p>
+        <h4>{{ data['manufacturer'][0] }}</h4>
+        <p><b>Website:</b> {{ data['manufacturer'][1] }}</p>
+        <p><b>Email:</b> {{ data['manufacturer'][2] }}</p>
+        <p><b>Twitter:</b> {{ data['manufacturer'][3] }}</p>
+        <p><b>Address:</b> {{ data['manufacturer'][4] }}</p>
+
+        <div *ngIf="!!data['manufacturer'][2]">
+          <button (click)="generateEmail(data)" color="primary" mat-raised-button>Send Email</button>
+        </div>
+      </div>
+    </div>
+
   </mat-card>
 
+  <ng-template #searching>
+      <mat-spinner></mat-spinner>
+  </ng-template>
 
 </div>
